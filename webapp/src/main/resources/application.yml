@@ -1,0 +1,33 @@
+debug: true
+server:
+  port: 8080
+spring:
+  application:
+    name: webapp
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+      
+ssoServiceUrl: http://localhost:8085/auth
+security:
+  oauth2:
+    client:
+      clientId: clientId
+      clientSecret: secret
+      accessTokenUri: ${ssoServiceUrl}/oauth/token
+      userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+    resource:
+      jwt:
+        keyUri: ${ssoServiceUrl}/oauth/token_key
+        #key-value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgIK2Wt4x2EtDl41C7vfpOsMquZMyOyteO2RsVeMLF/hXIeYvicKr0SQzVkodHEBCMiGXQDz5prijTq3RHPy2/5WJBCYq7yHgTLvspMy6sivXN7NdYE7I5pXo/KHk4nz+Fa6P3L8+L90E/3qwf6j3DKWnAgJFRY8AbSYXt1d5ELiIG1/gEqzC0fZmNhhfrBtxwWXrlpUDT0Kfvf0QVmPRxxCLXT+tEe1seWGEqeOLL5vXRLqmzZcBe1RZ9kQQm43+a9Qn5icSRnDfTAesQ3CrlAWJKl2kcWU1HwJqw+dZRSZ1X4kEXNMyzPdPBbGmU6MHdhpywI7SKZT7mX4BDnUKeQIDAQAB
+  sessions: ALWAYS
+zuul:
+  routes:
+    authorizationserver:
+      path: /auth/**
+      stripPrefix: false
+    resource-centre:
+      path: /resource/**
+      stripPrefix: false
+      
