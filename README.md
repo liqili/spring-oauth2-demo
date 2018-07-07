@@ -1,10 +1,6 @@
 # spring-oauth2-demo
-zuul,eureka,jwt,oauth2
 
-This is a oauth2 show case, which is based one spring cloud-
-API Gateway:zuul
-Service Register Center:eureka
-Auth Server:oauth2
+This is a oauth2 show case, which is based on spring cloud(zuul,eureka,jwt,oauth2)
 
 
 mvn spring-boot:run
