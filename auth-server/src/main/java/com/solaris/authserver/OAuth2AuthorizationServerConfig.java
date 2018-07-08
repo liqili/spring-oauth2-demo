@@ -47,7 +47,7 @@ public class OAuth2AuthorizationServerConfig extends
 				.secret("secret")
 				.authorizedGrantTypes("password", "authorization_code",
 						"refresh_token").scopes("bar", "read", "write").autoApprove(true)
-				.accessTokenValiditySeconds(10).refreshTokenValiditySeconds(60);
+				.accessTokenValiditySeconds(60).refreshTokenValiditySeconds(300);
 	}
 
 	@Bean

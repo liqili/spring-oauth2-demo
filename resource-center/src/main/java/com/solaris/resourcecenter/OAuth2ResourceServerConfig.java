@@ -1,4 +1,4 @@
-package com.solaris.webapp;
+package com.solaris.resourcecenter;
 
 import java.io.IOException;
 
@@ -29,14 +29,14 @@ public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
 		config.tokenServices(tokenServices());
 	}
 
-	@Bean
-	public OAuth2RestOperations oAuth2RestOperations(
-			OAuth2ClientContext oauth2ClientContext,
-			OAuth2ProtectedResourceDetails details) {
-		OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(details,
-				oauth2ClientContext);
-		return oAuth2RestTemplate;
-	}
+//	@Bean
+//	public OAuth2RestOperations oAuth2RestOperations(
+//			OAuth2ClientContext oauth2ClientContext,
+//			OAuth2ProtectedResourceDetails details) {
+//		OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(details,
+//				oauth2ClientContext);
+//		return oAuth2RestTemplate;
+//	}
 
 	@Bean
 	public TokenStore tokenStore() {
