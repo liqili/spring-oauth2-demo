@@ -1,3 +1,6 @@
+## Please refer to my newer showcase
+https://github.com/liqili/spring-microservice-oauth2-keycloak-starter
+
 # spring-oauth2-demo
 
 An oauth2 show case based on spring cloud(zuul,eureka,oauth2), using JWT(JSON Web Token). 
@@ -12,3 +15,5 @@ Resource centre is a resource server protected by oauth2.
 mvn spring-boot:run
 
 http://localhost:8080/resource/
+
+
